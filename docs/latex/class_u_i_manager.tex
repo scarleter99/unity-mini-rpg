@@ -1,0 +1,353 @@
+\hypertarget{class_u_i_manager}{}\doxysection{UIManager 클래스 참조}
+\label{class_u_i_manager}\index{UIManager@{UIManager}}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_i_manager_a9927b92157fc265e61799437bc3d0c34}{Set\+Canvas}} (Game\+Object go, bool sort=true)
+\item 
+T \mbox{\hyperlink{class_u_i_manager_a24d241f17a976ffd226a5a85c8ca6a79}{Show\+Scene\+UI$<$ T $>$}} (string name=null)
+\item 
+T \mbox{\hyperlink{class_u_i_manager_ad4c80654123d4b920de9b6135ce0f1b5}{Show\+Popup\+UI$<$ T $>$}} (string name=null)
+\item 
+T \mbox{\hyperlink{class_u_i_manager_ae64d298bb7cfdd634b47b076f80dd2a8}{Make\+Sub\+Item$<$ T $>$}} (Transform parent=null, string name=null)
+\item 
+void \mbox{\hyperlink{class_u_i_manager_a4416f9eb9f7d5966110fbef4b5bd5a63}{Close\+Popup\+UI}} ()
+\begin{DoxyCompactList}\small\item\em 가장 Order가 높은 Popup\+UI 제거 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_manager_a539e380cd5f5c9413a9de08c982ff960}{Close\+Popup\+UI}} (\mbox{\hyperlink{class_u_i___popup}{UI\+\_\+\+Popup}} popup)
+\item 
+void \mbox{\hyperlink{class_u_i_manager_a9c45b1ca55f9749a0875024b8cda2044}{Close\+All\+Popup\+UI}} ()
+\begin{DoxyCompactList}\small\item\em 모든 Popup\+UI 제거 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_manager_aa71d36872f416feaa853788a7a7a7ef8}{Clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{속성}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_u_i_manager_a9b07d4317d951d5a4f0bce4f1a405561}{Root}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_u_i_manager_ad9548c3722176e3c7393150195ccda8e}{m\+Order}} = 10
+\item 
+\mbox{\hyperlink{class_u_i___scene}{UI\+\_\+\+Scene}} \mbox{\hyperlink{class_u_i_manager_a32e41023d8bef34ecb5544fbbff1c239}{m\+Scene\+UI}}
+\item 
+Stack$<$ \mbox{\hyperlink{class_u_i___popup}{UI\+\_\+\+Popup}} $>$ \mbox{\hyperlink{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}{m\+Popup\+Stack}} = new Stack$<$\mbox{\hyperlink{class_u_i___popup}{UI\+\_\+\+Popup}}$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00005}{5}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{class_u_i_manager_aa71d36872f416feaa853788a7a7a7ef8}\label{class_u_i_manager_aa71d36872f416feaa853788a7a7a7ef8}} 
+\index{UIManager@{UIManager}!Clear@{Clear}}
+\index{Clear@{Clear}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00135}{135}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i_manager_a9c45b1ca55f9749a0875024b8cda2044}{CloseAllPopupUI}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i_manager_a32e41023d8bef34ecb5544fbbff1c239}{mSceneUI}}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_manager_a9c45b1ca55f9749a0875024b8cda2044}\label{class_u_i_manager_a9c45b1ca55f9749a0875024b8cda2044}} 
+\index{UIManager@{UIManager}!CloseAllPopupUI@{CloseAllPopupUI}}
+\index{CloseAllPopupUI@{CloseAllPopupUI}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{CloseAllPopupUI()}{CloseAllPopupUI()}}
+{\footnotesize\ttfamily void Close\+All\+Popup\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+모든 Popup\+UI 제거 
+
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00127}{127}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}{mPopupStack}}.Count\ >\ 0)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i_manager_a4416f9eb9f7d5966110fbef4b5bd5a63}{ClosePopupUI}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_manager_a4416f9eb9f7d5966110fbef4b5bd5a63}\label{class_u_i_manager_a4416f9eb9f7d5966110fbef4b5bd5a63}} 
+\index{UIManager@{UIManager}!ClosePopupUI@{ClosePopupUI}}
+\index{ClosePopupUI@{ClosePopupUI}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{ClosePopupUI()}{ClosePopupUI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Close\+Popup\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+가장 Order가 높은 Popup\+UI 제거 
+
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00096}{96}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}{mPopupStack}}.Count\ ==\ 0)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i___popup}{UI\_Popup}}\ popupUI=\ \mbox{\hyperlink{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}{mPopupStack}}.Pop();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a496f52583a8ea4b899679fe3254546ed}{ResourceMng}}.\mbox{\hyperlink{class_resource_manager_a3d8540720596e320425d0cfca291255b}{Destroy}}(popupUI.gameObject);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ popupUI\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i_manager_ad9548c3722176e3c7393150195ccda8e}{mOrder}}-\/-\/;}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_manager_a539e380cd5f5c9413a9de08c982ff960}\label{class_u_i_manager_a539e380cd5f5c9413a9de08c982ff960}} 
+\index{UIManager@{UIManager}!ClosePopupUI@{ClosePopupUI}}
+\index{ClosePopupUI@{ClosePopupUI}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{ClosePopupUI()}{ClosePopupUI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Close\+Popup\+UI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_u_i___popup}{UI\+\_\+\+Popup}}}]{popup }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{매개변수}
+{\em 가장} & Order가 높은 Popup\+UI 확인 후 제거 \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00110}{110}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}{mPopupStack}}.Count\ ==\ 0)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}{mPopupStack}}.Peek()\ !=\ popup)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\textcolor{stringliteral}{"{}Close\ Popup\ Failed"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i_manager_a4416f9eb9f7d5966110fbef4b5bd5a63}{ClosePopupUI}}();}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_manager_ae64d298bb7cfdd634b47b076f80dd2a8}\label{class_u_i_manager_ae64d298bb7cfdd634b47b076f80dd2a8}} 
+\index{UIManager@{UIManager}!MakeSubItem$<$ T $>$@{MakeSubItem$<$ T $>$}}
+\index{MakeSubItem$<$ T $>$@{MakeSubItem$<$ T $>$}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{MakeSubItem$<$ T $>$()}{MakeSubItem< T >()}}
+{\footnotesize\ttfamily T Make\+Sub\+Item$<$ T $>$ (\begin{DoxyParamCaption}\item[{Transform}]{parent = {\ttfamily null},  }\item[{string}]{name = {\ttfamily null} }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[타입 한정자들]\begin{description}
+\item[{\em T} : {\em \mbox{\hyperlink{class_u_i___base}{UI\+\_\+\+Base}}}]\end{description}
+\end{Desc}
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00080}{80}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_u_i___base}{UI\_Base}}}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(name))}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ typeof(T).Name;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ GameObject\ go\ =\ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a496f52583a8ea4b899679fe3254546ed}{ResourceMng}}.\mbox{\hyperlink{class_resource_manager_a04b388e19bffc92646a7c885976a9bbd}{Instantiate}}(\$\textcolor{stringliteral}{"{}UI/SubItemUI/\{name\}"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ go.transform.SetParent(parent);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ go.GetOrAddComponent<T>();}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_manager_a9927b92157fc265e61799437bc3d0c34}\label{class_u_i_manager_a9927b92157fc265e61799437bc3d0c34}} 
+\index{UIManager@{UIManager}!SetCanvas@{SetCanvas}}
+\index{SetCanvas@{SetCanvas}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{SetCanvas()}{SetCanvas()}}
+{\footnotesize\ttfamily void Set\+Canvas (\begin{DoxyParamCaption}\item[{Game\+Object}]{go,  }\item[{bool}]{sort = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{매개변수}
+{\em sort가} & true면, go의 Canvas 컴포넌트를 가져와 m\+Order값을 1더해서 설정 (Popup\+UI) \\
+\hline
+{\em sort가} & false면 go의 Canvas 컴포넌트를 가져와 m\+Order값을 0으로 설정 (Scene\+UI) \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Canvas\ canvas\ =\ \mbox{\hyperlink{class_util}{Util}}.GetOrAddComponent<Canvas>(go);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ canvas.renderMode\ =\ RenderMode.ScreenSpaceOverlay;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ canvas.overrideSorting\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ 부모\ 캔버스와는\ 독립적인\ 오더값을\ 가짐}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sort)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ canvas.sortingOrder\ =\ \mbox{\hyperlink{class_u_i_manager_ad9548c3722176e3c7393150195ccda8e}{mOrder}}++;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ canvas.sortingOrder\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_manager_ad4c80654123d4b920de9b6135ce0f1b5}\label{class_u_i_manager_ad4c80654123d4b920de9b6135ce0f1b5}} 
+\index{UIManager@{UIManager}!ShowPopupUI$<$ T $>$@{ShowPopupUI$<$ T $>$}}
+\index{ShowPopupUI$<$ T $>$@{ShowPopupUI$<$ T $>$}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{ShowPopupUI$<$ T $>$()}{ShowPopupUI< T >()}}
+{\footnotesize\ttfamily T Show\+Popup\+UI$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{name = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{매개변수}
+{\em 이름이} & name인 Popup\+UI 생성 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+생성한 Popup\+UI T컴포넌트로 리턴 
+\end{DoxyReturn}
+\begin{Desc}
+\item[타입 한정자들]\begin{description}
+\item[{\em T} : {\em \mbox{\hyperlink{class_u_i___popup}{UI\+\_\+\+Popup}}}]\end{description}
+\end{Desc}
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00066}{66}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_u_i___popup}{UI\_Popup}}}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(name))}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ typeof(T).Name;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ GameObject\ go\ =\ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a496f52583a8ea4b899679fe3254546ed}{ResourceMng}}.\mbox{\hyperlink{class_resource_manager_a04b388e19bffc92646a7c885976a9bbd}{Instantiate}}(\$\textcolor{stringliteral}{"{}UI/PopupUI/\{name\}"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ T\ popupUI\ =\ \mbox{\hyperlink{class_util}{Util}}.GetOrAddComponent<T>(go);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}{mPopupStack}}.Push(popupUI);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ go.transform.SetParent(\mbox{\hyperlink{class_u_i_manager_a9b07d4317d951d5a4f0bce4f1a405561}{Root}}.transform);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ popupUI;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_u_i_manager_a24d241f17a976ffd226a5a85c8ca6a79}\label{class_u_i_manager_a24d241f17a976ffd226a5a85c8ca6a79}} 
+\index{UIManager@{UIManager}!ShowSceneUI$<$ T $>$@{ShowSceneUI$<$ T $>$}}
+\index{ShowSceneUI$<$ T $>$@{ShowSceneUI$<$ T $>$}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{ShowSceneUI$<$ T $>$()}{ShowSceneUI< T >()}}
+{\footnotesize\ttfamily T Show\+Scene\+UI$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{name = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{매개변수}
+{\em 이름이} & name인 Scene\+UI 생성 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+생성한 scene\+UI T컴포넌트로 리턴 
+\end{DoxyReturn}
+\begin{Desc}
+\item[타입 한정자들]\begin{description}
+\item[{\em T} : {\em \mbox{\hyperlink{class_u_i___scene}{UI\+\_\+\+Scene}}}]\end{description}
+\end{Desc}
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00048}{48}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_u_i___scene}{UI\_Scene}}}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(name))}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ typeof(T).Name;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ GameObject\ go\ =\ \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a496f52583a8ea4b899679fe3254546ed}{ResourceMng}}.\mbox{\hyperlink{class_resource_manager_a04b388e19bffc92646a7c885976a9bbd}{Instantiate}}(\$\textcolor{stringliteral}{"{}UI/SceneUI/\{name\}"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ T\ sceneUI\ =\ \mbox{\hyperlink{class_util}{Util}}.GetOrAddComponent<T>(go);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_u_i_manager_a32e41023d8bef34ecb5544fbbff1c239}{mSceneUI}}\ =\ sceneUI;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ go.transform.SetParent(\mbox{\hyperlink{class_u_i_manager_a9b07d4317d951d5a4f0bce4f1a405561}{Root}}.transform);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sceneUI;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{class_u_i_manager_ad9548c3722176e3c7393150195ccda8e}\label{class_u_i_manager_ad9548c3722176e3c7393150195ccda8e}} 
+\index{UIManager@{UIManager}!mOrder@{mOrder}}
+\index{mOrder@{mOrder}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{mOrder}{mOrder}}
+{\footnotesize\ttfamily int m\+Order = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}\label{class_u_i_manager_a1383fcc65dbf2f647d79707e0dbbc3ed}} 
+\index{UIManager@{UIManager}!mPopupStack@{mPopupStack}}
+\index{mPopupStack@{mPopupStack}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{mPopupStack}{mPopupStack}}
+{\footnotesize\ttfamily Stack$<$\mbox{\hyperlink{class_u_i___popup}{UI\+\_\+\+Popup}}$>$ m\+Popup\+Stack = new Stack$<$\mbox{\hyperlink{class_u_i___popup}{UI\+\_\+\+Popup}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{class_u_i_manager_a32e41023d8bef34ecb5544fbbff1c239}\label{class_u_i_manager_a32e41023d8bef34ecb5544fbbff1c239}} 
+\index{UIManager@{UIManager}!mSceneUI@{mSceneUI}}
+\index{mSceneUI@{mSceneUI}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{mSceneUI}{mSceneUI}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_u_i___scene}{UI\+\_\+\+Scene}} m\+Scene\+UI\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{속성 문서화}
+\mbox{\Hypertarget{class_u_i_manager_a9b07d4317d951d5a4f0bce4f1a405561}\label{class_u_i_manager_a9b07d4317d951d5a4f0bce4f1a405561}} 
+\index{UIManager@{UIManager}!Root@{Root}}
+\index{Root@{Root}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{Root}{Root}}
+{\footnotesize\ttfamily Game\+Object Root\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{_u_i_manager_8cs_source}{UIManager.\+cs}} 파일의 \mbox{\hyperlink{_u_i_manager_8cs_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ root\ =\ GameObject.Find(\textcolor{stringliteral}{"{}@UI\_Root"{}});}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ root\ =\ \textcolor{keyword}{new}\ GameObject\ \{\ name\ =\ \textcolor{stringliteral}{"{}@UI\_Root"{}}\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ddino/\+Documents/\+Work\+Space/\+Unity\+Projects/alpha-\/project/night\+\_\+and\+\_\+knight/\+Assets/\+C\#/\+Manager/\mbox{\hyperlink{_u_i_manager_8cs}{UIManager.\+cs}}\end{DoxyCompactItemize}
