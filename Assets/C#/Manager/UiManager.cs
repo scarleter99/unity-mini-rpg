@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager
+public class UiManager
 {
     private int mOrder = 10; // 현재까지 최근에 사용한 오더
     

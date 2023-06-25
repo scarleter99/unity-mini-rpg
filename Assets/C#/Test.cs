@@ -10,11 +10,19 @@ public class Test : MonoBehaviour
 {
     private void Start()
     {
+        //TestMethod();
+        
         //TestCube();
         //TestPopupUI();
-        TestSceneUI();
+        //TestSceneUI();
     }
 
+    public void TestMethod()
+    {
+        Debug.Log("1");
+        Debug.Log("2");
+    }
+    
     public void TestCube()
     {
         List<GameObject> go = new List<GameObject>();
