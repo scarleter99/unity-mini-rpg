@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SoundManager
 {
-    private AudioSource[] mAudioSources = new AudioSource[(int)Define.Sound.MaxCount];
-    private Dictionary<string, AudioClip> mAudioClipDic = new Dictionary<string, AudioClip>();
+    private AudioSource[] _audioSources = new AudioSource[(int)Define.Sound.MaxCount];
+    private Dictionary<string, AudioClip> _audioClipDic = new Dictionary<string, AudioClip>();
 
     public void Init()
     {
@@ -19,11 +19,11 @@ public class SoundManager
             for (int i = 0; i < soundNames.Length - 1; i++)
             {
                 GameObject go = new GameObject { name = soundNames[i] };
-                mAudioSources[i] = go.AddComponent<AudioSource>();
+                _audioSources[i] = go.AddComponent<AudioSource>();
                 go.transform.parent = root.transform;
             }
 
-            mAudioSources[(int)Define.Sound.Bgm].loop = true;
+            _audioSources[(int)Define.Sound.Bgm].loop = true;
         }
     }
 
@@ -47,7 +47,7 @@ public class SoundManager
 
         if (type == Define.Sound.Bgm)
         {
-            AudioSource audioSource = mAudioSources[(int)type];
+            AudioSource audioSource = _audioSources[(int)type];
             if (audioSource.isPlaying)
                 audioSource.Stop();
 
@@ -57,7 +57,7 @@ public class SoundManager
         }
         else
         {
-            AudioSource audioSource = mAudioSources[(int)Define.Sound.Effect];
+            AudioSource audioSource = _audioSources[(int)Define.Sound.Effect];
             audioSource.pitch = pitch;
             audioSource.PlayOneShot(audioClip);
         }
@@ -79,10 +79,10 @@ public class SoundManager
         }
         else
         {
-            if (mAudioClipDic.TryGetValue(path, out audioClip) == false)
+            if (_audioClipDic.TryGetValue(path, out audioClip) == false)
             {
                 audioClip = GameManager.ResourceMng.Load<AudioClip>(path);
-                mAudioClipDic.Add(path, audioClip);
+                _audioClipDic.Add(path, audioClip);
             }
         }
         
@@ -94,12 +94,12 @@ public class SoundManager
     
     public void Clear()
     {
-        foreach (AudioSource audioSource in mAudioSources)
+        foreach (AudioSource audioSource in _audioSources)
         {
             audioSource.clip = null;
             audioSource.Stop();
         }
         
-        mAudioClipDic.Clear();
+        _audioClipDic.Clear();
     }
 }

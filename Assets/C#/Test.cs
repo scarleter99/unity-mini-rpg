@@ -32,11 +32,11 @@ public class Test : MonoBehaviour
 
     public void TestPopupUI()
     {
-        GameManager.UIMng.ShowPopupUI<UI_TestPopup>();
+        GameManager.UiMng.ShowPopupUI<UI_TestPopup>();
     }
 
     public void TestSceneUI()
     {
-        GameManager.UIMng.ShowSceneUI<UI_Inven>();
+        GameManager.UiMng.ShowSceneUI<UI_Inven>();
     }
 }

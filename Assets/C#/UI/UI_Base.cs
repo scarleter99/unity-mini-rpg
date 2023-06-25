@@ -11,7 +11,7 @@ using UnityEngine.UI;
  */
 public abstract class UI_Base : MonoBehaviour
 {
-    protected Dictionary<Type, UnityEngine.Object[]> mObjectDic = new Dictionary<Type, UnityEngine.Object[]>();
+    protected Dictionary<Type, UnityEngine.Object[]> OjectDic = new Dictionary<Type, UnityEngine.Object[]>();
     
     public abstract void Init();
 
@@ -22,7 +22,7 @@ public abstract class UI_Base : MonoBehaviour
     {
         string[] uiNames = Enum.GetNames(type);
         UnityEngine.Object[] objects = new UnityEngine.Object[uiNames.Length];
-        mObjectDic.Add(typeof(T), objects);
+        OjectDic.Add(typeof(T), objects);
 
         for (int i = 0; i < uiNames.Length; i++)
         {
@@ -43,7 +43,7 @@ public abstract class UI_Base : MonoBehaviour
     protected T Get<T>(int idx) where T : UnityEngine.Object
     {
         UnityEngine.Object[] objects;
-        if (mObjectDic.TryGetValue(typeof(T), out objects) == false)
+        if (OjectDic.TryGetValue(typeof(T), out objects) == false)
             return null;
 
         return objects[idx] as T;

@@ -9,7 +9,7 @@ public class InputManager
     public Action KeyAction = null;
     public Action<Define.MouseEvent> MouseAction = null;
 
-    private bool mPressed = false;
+    private bool _pressed = false;
 
     /**
      * @brief 입력이 없다면 바로 리턴, 입력이 있다면 KeyAction/MouseAction을 Invoke
@@ -28,13 +28,13 @@ public class InputManager
             if (Input.GetMouseButton(0))
             {
                 MouseAction.Invoke(Define.MouseEvent.Press);
-                mPressed = true;
+                _pressed = true;
             }
             else
             {
-                if (mPressed)
+                if (_pressed)
                     MouseAction.Invoke(Define.MouseEvent.Click);
-                mPressed = false;
+                _pressed = false;
             }
         }
     }

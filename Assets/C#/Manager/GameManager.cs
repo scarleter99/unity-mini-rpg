@@ -8,8 +8,8 @@ using UnityEngine;
  */
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _instance;
-    public static GameManager Instance { get { Init(); return _instance; } }
+    private static GameManager s_instance;
+    public static GameManager Instance { get { Init(); return s_instance; } }
 
     private DataManager _dataMng = new DataManager();
     private InputManager _inputMng = new InputManager();
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public static ResourceManager ResourceMng => Instance._resourceMng;
     public static SceneManagerEx SceneMng => Instance._sceneMng;
     public static SoundManager SoundMng => Instance._soundMng;
-    public static UiManager UIMng => Instance._uiMng;
+    public static UiManager UiMng => Instance._uiMng;
 
 
     private void Start()
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     static void Init()
     {
-        if (_instance == null)
+        if (s_instance == null)
         {
             GameObject go = GameObject.Find("@GameManager");
             if (go == null)
@@ -50,11 +50,11 @@ public class GameManager : MonoBehaviour
             }
             
             DontDestroyOnLoad(go);
-            _instance = go.GetComponent<GameManager>();
+            s_instance = go.GetComponent<GameManager>();
 
-            _instance._dataMng.Init();
-            _instance._soundMng.Init();
-            _instance._poolMng.Init();
+            s_instance._dataMng.Init();
+            s_instance._soundMng.Init();
+            s_instance._poolMng.Init();
         }
     }
     
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         InputMng.Clear();
         SoundMng.Clear();
         SceneMng.Clear();
-        UIMng.Clear();
+        UiMng.Clear();
         PoolMng.Clear();
     }
 }

@@ -10,7 +10,7 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.GameScene;
         
-        GameManager.UIMng.ShowSceneUI<UI_Inven>();
+        GameManager.UiMng.ShowSceneUI<UI_Inven>();
 
         // todo Test Code
         for (int i = 0; i < 5; i++)

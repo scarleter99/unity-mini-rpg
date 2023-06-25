@@ -8,15 +8,15 @@ using UnityEngine;
  */
 public class PoolManager
 {
-    private Dictionary<string, Pool> mPoolDic = new Dictionary<string, Pool>();
-    private Transform mRoot;
+    private Dictionary<string, Pool> _poolDic = new Dictionary<string, Pool>();
+    private Transform _root;
 
     public void Init()
     {
-        if (mRoot == null)
+        if (_root == null)
         {
-            mRoot = new GameObject { name = "@Pool_Root" }.transform;
-            Object.DontDestroyOnLoad(mRoot);
+            _root = new GameObject { name = "@Pool_Root" }.transform;
+            Object.DontDestroyOnLoad(_root);
         }
     }
     
@@ -27,9 +27,9 @@ public class PoolManager
     {
         Pool pool = new Pool();
         pool.Init(original, count);
-        pool.Root.parent = mRoot;
+        pool.Root.parent = _root;
         
-        mPoolDic.Add(original.name, pool);
+        _poolDic.Add(original.name, pool);
     }
     
     /**
@@ -38,13 +38,13 @@ public class PoolManager
     public void Push(PoolAble poolAble)
     {
         string name = poolAble.gameObject.name;
-        if (mPoolDic.ContainsKey(name) == false)
+        if (_poolDic.ContainsKey(name) == false)
         {
             GameObject.Destroy(poolAble.gameObject);
             return;
         }
         
-        mPoolDic[name].Push(poolAble);
+        _poolDic[name].Push(poolAble);
     }
     
     /**
@@ -53,10 +53,10 @@ public class PoolManager
      */
     public PoolAble Pop(GameObject original, Transform parent = null)
     {
-        if(mPoolDic.ContainsKey(original.name) == false)
+        if(_poolDic.ContainsKey(original.name) == false)
             CreatePool(original);
 
-        return mPoolDic[original.name].Pop(parent);
+        return _poolDic[original.name].Pop(parent);
     }
     
     /**
@@ -65,17 +65,17 @@ public class PoolManager
      */
     public GameObject GetOriginal(string name)
     {
-        if (mPoolDic.ContainsKey(name) == false)
+        if (_poolDic.ContainsKey(name) == false)
             return null;
         
-        return mPoolDic[name].Original;
+        return _poolDic[name].Original;
     }
     
     public void Clear()
     {
-        foreach (Transform child in mRoot)
+        foreach (Transform child in _root)
             Object.Destroy(child.gameObject);
 
-        mPoolDic.Clear();
+        _poolDic.Clear();
     }
 }

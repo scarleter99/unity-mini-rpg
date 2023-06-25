@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UiManager
 {
-    private int mOrder = 10; // 현재까지 최근에 사용한 오더
+    private int _order = 10; // 현재까지 최근에 사용한 오더
     
-    private UI_Scene mSceneUI; // 현재의 고정 캔버스 UI
-    private Stack<UI_Popup> mPopupStack = new Stack<UI_Popup>(); // 팝업 캔버스 UI Stack
+    private UI_Scene _sceneUI; // 현재의 고정 캔버스 UI
+    private Stack<UI_Popup> _popupStack = new Stack<UI_Popup>(); // 팝업 캔버스 UI Stack
 
     public GameObject Root
     {
@@ -33,7 +33,7 @@ public class UiManager
 
         if (sort)
         {
-            canvas.sortingOrder = mOrder++;
+            canvas.sortingOrder = _order++;
         }
         else
         {
@@ -52,7 +52,7 @@ public class UiManager
 
         GameObject go = GameManager.ResourceMng.Instantiate($"UI/SceneUI/{name}");
         T sceneUI = Util.GetOrAddComponent<T>(go);
-        mSceneUI = sceneUI;
+        _sceneUI = sceneUI;
 
         go.transform.SetParent(Root.transform);
         
@@ -70,7 +70,7 @@ public class UiManager
 
         GameObject go = GameManager.ResourceMng.Instantiate($"UI/PopupUI/{name}");
         T popupUI = Util.GetOrAddComponent<T>(go);
-        mPopupStack.Push(popupUI);
+        _popupStack.Push(popupUI);
         
         go.transform.SetParent(Root.transform);
         
@@ -95,13 +95,13 @@ public class UiManager
      */
     public void ClosePopupUI()
     {
-        if (mPopupStack.Count == 0)
+        if (_popupStack.Count == 0)
             return;
 
-        UI_Popup popupUI= mPopupStack.Pop();
+        UI_Popup popupUI= _popupStack.Pop();
         GameManager.ResourceMng.Destroy(popupUI.gameObject);
         popupUI = null;
-        mOrder--;
+        _order--;
     }
     
     /**
@@ -109,10 +109,10 @@ public class UiManager
      */
     public void ClosePopupUI(UI_Popup popup)
     {
-        if (mPopupStack.Count == 0)
+        if (_popupStack.Count == 0)
             return;
 
-        if (mPopupStack.Peek() != popup)
+        if (_popupStack.Peek() != popup)
         {
             Debug.Log("Close Popup Failed");
             return;
@@ -126,7 +126,7 @@ public class UiManager
      */
     public void CloseAllPopupUI()
     {
-        while (mPopupStack.Count > 0)
+        while (_popupStack.Count > 0)
         {
             ClosePopupUI();
         }
@@ -135,6 +135,6 @@ public class UiManager
     public void Clear()
     {
         CloseAllPopupUI();
-        mSceneUI = null;
+        _sceneUI = null;
     }
 }

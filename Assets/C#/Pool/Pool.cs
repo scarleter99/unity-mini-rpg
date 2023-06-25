@@ -8,7 +8,7 @@ using UnityEngine;
  */
 public class Pool
 {
-    private Stack<PoolAble> mPoolStack = new Stack<PoolAble>();
+    private Stack<PoolAble> _poolStack = new Stack<PoolAble>();
 
     public GameObject Original { get; private set; }
     public Transform Root { get; set; }
@@ -44,7 +44,7 @@ public class Pool
         poolAble.gameObject.SetActive(false);
         poolAble.IsUsing = false;
         
-        mPoolStack.Push(poolAble);
+        _poolStack.Push(poolAble);
     }
     
     /**
@@ -54,8 +54,8 @@ public class Pool
     {
         PoolAble poolAble;
         
-        if (mPoolStack.Count > 0)
-            poolAble = mPoolStack.Pop();
+        if (_poolStack.Count > 0)
+            poolAble = _poolStack.Pop();
         else
         {
             poolAble = Create();

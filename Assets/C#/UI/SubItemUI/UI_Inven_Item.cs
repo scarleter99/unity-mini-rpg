@@ -14,7 +14,7 @@ public class UI_Inven_Item : UI_Base
         ItemNameText
     }
 
-    private string mItemName;
+    private string _itemName;
     
     private void Start()
     {
@@ -24,18 +24,18 @@ public class UI_Inven_Item : UI_Base
     public override void Init()
     {
         Bind<GameObject>(typeof(GameObjects));
-        GetGameObject((int)GameObjects.ItemNameText).GetComponent<TextMeshProUGUI>().text = mItemName;
+        GetGameObject((int)GameObjects.ItemNameText).GetComponent<TextMeshProUGUI>().text = _itemName;
         
         GetGameObject((int)GameObjects.ItemIcon).gameObject.BindEvent(OnButtonClicked, Define.UIEvent.Click);
     }
 
     public void SetInfo(string itemName)
     {
-        mItemName = itemName;
+        this._itemName = itemName;
     }
 
     public void OnButtonClicked(PointerEventData data)
     {
-        Debug.Log($"{mItemName} Click!");
+        Debug.Log($"{_itemName} Click!");
     }
 }
