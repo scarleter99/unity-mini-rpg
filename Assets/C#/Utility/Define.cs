@@ -6,31 +6,31 @@ public class Define
     public enum UIEvent
     {
         Click,
-        Drag
+        Drag,
     }
     
     public enum MouseEvent
     {
         Press,
-        Click
+        Click,
     }
     
     public enum CameraMode
     {
-        QuarterView
+        QuarterView,
     }
     
     public enum Scene
     {
         UnknownScene,
         TitleScene,
-        GameScene
+        GameScene,
     }
     
     public enum Sound
     {
         Bgm,
         Effect,
-        MaxCount
+        MaxCount,
     }
 }

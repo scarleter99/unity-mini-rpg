@@ -17,6 +17,11 @@ public class Test : MonoBehaviour
         //TestSceneUI();
     }
 
+    private void Update()
+    {
+
+    }
+
     public void TestMethod()
     {
         Debug.Log("1");
