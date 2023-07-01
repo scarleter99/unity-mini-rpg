@@ -10,8 +10,6 @@ public class Test : MonoBehaviour
 {
     private void Start()
     {
-        //TestMethod();
-        
         //TestCube();
         //TestPopupUI();
         //TestSceneUI();
@@ -22,12 +20,6 @@ public class Test : MonoBehaviour
 
     }
 
-    public void TestMethod()
-    {
-        Debug.Log("1");
-        Debug.Log("2");
-    }
-    
     public void TestCube()
     {
         List<GameObject> go = new List<GameObject>();
@@ -37,11 +29,11 @@ public class Test : MonoBehaviour
 
     public void TestPopupUI()
     {
-        GameManager.UiMng.ShowPopupUI<UI_TestPopup>();
+        GameManager.UIMng.ShowPopupUI<UI_TestPopup>();
     }
 
     public void TestSceneUI()
     {
-        GameManager.UiMng.ShowSceneUI<UI_Inven>();
+        GameManager.UIMng.ShowSceneUI<UI_Inven>();
     }
 }

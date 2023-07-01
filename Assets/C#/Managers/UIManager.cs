@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UiManager
+public class UIManager
 {
     private int _order = 10; // 현재까지 최근에 사용한 오더
     
@@ -22,8 +22,8 @@ public class UiManager
     }
 
     /**
-     * @param sort가 true면, go의 Canvas 컴포넌트를 가져와 mOrder값을 1더해서 설정 (PopupUI)
-     * @param sort가 false면 go의 Canvas 컴포넌트를 가져와 mOrder값을 0으로 설정 (SceneUI)
+     * @param sort가 true면, go의 Canvas 컴포넌트를 가져와 _order값을 1더해서 설정 (PopupUI)
+     * @param sort가 false면, go의 Canvas 컴포넌트를 가져와 _order값을 0으로 설정 (SceneUI)
      */
     public void SetCanvas(GameObject go, bool sort = true)
     {

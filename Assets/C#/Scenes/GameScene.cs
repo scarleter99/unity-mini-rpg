@@ -10,10 +10,9 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.GameScene;
         
-        GameManager.UiMng.ShowSceneUI<UI_Inven>();
-
-        // todo Test Code
-        for (int i = 0; i < 5; i++)
+        GameManager.UIMng.ShowSceneUI<UI_Inven>();
+        
+        for (int i = 0; i < 2; i++)
             GameManager.ResourceMng.Instantiate("Cube");
     }
     

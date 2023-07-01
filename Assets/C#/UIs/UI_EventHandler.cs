@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /*
- * @brief GameObject가 여러 이벤트(클릭, 드래그)를 받을 수 있게 해주는 Class
+ * @brief UI가 입력(클릭, 드래그)을 받을 수 있게 해주는 Class
  */
 public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IDragHandler
 {

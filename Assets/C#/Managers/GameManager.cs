@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private ResourceManager _resourceMng = new ResourceManager();
     private SceneManagerEx _sceneMng = new SceneManagerEx();
     private SoundManager _soundMng = new SoundManager();
-    private UiManager _uiMng = new UiManager();
+    private UIManager _uiMng = new UIManager();
 
     public static DataManager DataMng => Instance._dataMng;
     public static InputManager InputMng => Instance._inputMng;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public static ResourceManager ResourceMng => Instance._resourceMng;
     public static SceneManagerEx SceneMng => Instance._sceneMng;
     public static SoundManager SoundMng => Instance._soundMng;
-    public static UiManager UiMng => Instance._uiMng;
+    public static UIManager UIMng => Instance._uiMng;
 
 
     private void Start()
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         InputMng.Clear();
         SoundMng.Clear();
         SceneMng.Clear();
-        UiMng.Clear();
+        UIMng.Clear();
         PoolMng.Clear();
     }
 }

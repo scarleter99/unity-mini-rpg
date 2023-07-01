@@ -6,7 +6,7 @@ public class UI_Popup : UI_Base
 {
     public override void Init()
     {
-        GameManager.UiMng.SetCanvas(gameObject, true);
+        GameManager.UIMng.SetCanvas(gameObject, true);
     }
 
     /**
@@ -14,6 +14,6 @@ public class UI_Popup : UI_Base
      */
     public virtual void ClosePopupUI()
     {
-        GameManager.UiMng.ClosePopupUI(this);
+        GameManager.UIMng.ClosePopupUI(this);
     }
 }

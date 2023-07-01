@@ -22,7 +22,7 @@ public class Util : MonoBehaviour
 
     /**
      * @param go의 모든 자식들 중 T컴포넌트를 가지며, name과 이름이 일치하는 GameObject 검색
-     * @param recursive가 true라면 바로 밑 자식 뿐 아니라 손자, 증손자, ... 모두 검색, false라면 자식만 검색
+     * @param recursive가 true라면 바로 밑 자식 뿐 모든 자손들에서 검색, false라면 자식만 검색
      * @return 검색한 GameObject를 T컴포넌트로 리턴
      */
     public static T FindChild<T>(GameObject go, string name = null, bool recursive = false) where T : UnityEngine.Object
