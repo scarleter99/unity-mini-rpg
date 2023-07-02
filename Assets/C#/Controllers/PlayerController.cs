@@ -86,6 +86,9 @@ public class PlayerController : MonoBehaviour
 		    _destPos = hit.point;
 		    _state = PlayerState.Moving;
 	    }
+	    
+	    if (evt == Define.MouseEvent.Click)
+			GameManager.SoundMng.Play("UnityChan/univ0001");
     }
     
     /*

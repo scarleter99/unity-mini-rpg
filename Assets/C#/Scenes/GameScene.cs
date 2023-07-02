@@ -10,10 +10,15 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.GameScene;
         
+        // UIManager test
         GameManager.UIMng.ShowSceneUI<UI_Inven>();
         
+        // ResourceManager test
         for (int i = 0; i < 2; i++)
             GameManager.ResourceMng.Instantiate("Cube");
+        
+        // DataManager test
+        Dictionary<int, Stat> statDic = GameManager.DataMng.StatDic;
     }
     
     public override void Clear()

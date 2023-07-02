@@ -34,12 +34,13 @@ public class Pool
     }
     
     /**
-     * @param poolAble를 mPoolStack에 넣어주기 (오브젝트 비활성화)
+     * @param poolAble를 _poolStack에 넣어주기 (오브젝트 비활성화)
      */
     public void Push(PoolAble poolAble)
     {
         if (poolAble == null)
             return;
+        
         poolAble.transform.parent = Root;
         poolAble.gameObject.SetActive(false);
         poolAble.IsUsing = false;
@@ -48,7 +49,7 @@ public class Pool
     }
     
     /**
-     * @param mPoolStack로부터 꺼내와서 parent를 부모 오브젝트로 설정 (오브젝트 활성화)
+     * @param _poolStack로부터 꺼내와서 parent를 부모 오브젝트로 설정 (오브젝트 활성화)
      */
     public PoolAble Pop(Transform parent)
     {
