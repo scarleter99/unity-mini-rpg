@@ -12,13 +12,9 @@ public class GameScene : BaseScene
         
         // UIManager test
         GameManager.UIMng.ShowSceneUI<UI_Inven>();
-        
-        // ResourceManager test
-        for (int i = 0; i < 2; i++)
-            GameManager.ResourceMng.Instantiate("Cube");
-        
+
         // DataManager test
-        Dictionary<int, Stat> statDic = GameManager.DataMng.StatDic;
+        Dictionary<int, Data.Stat> statDic = GameManager.DataMng.StatDic;
     }
     
     public override void Clear()

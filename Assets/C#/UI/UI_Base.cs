@@ -11,18 +11,18 @@ using UnityEngine.UI;
  */
 public abstract class UI_Base : MonoBehaviour
 {
-    protected Dictionary<Type, UnityEngine.Object[]> ObjectDic = new Dictionary<Type, UnityEngine.Object[]>();
+    protected Dictionary<Type, UnityEngine.Object[]> _objectDic = new Dictionary<Type, UnityEngine.Object[]>();
     
     public abstract void Init();
 
     /*
-     * @param T컴포넌트를 가지고 있는 모든 자식 GameObject를 검색해 ObjectDic에 Add
+     * @param T컴포넌트를 가지고 있는 모든 자식 GameObject를 검색해 _objectDic에 Add
      */ 
     protected void Bind<T>(Type type) where T : UnityEngine.Object
     {
         string[] uiNames = Enum.GetNames(type);
         UnityEngine.Object[] objects = new UnityEngine.Object[uiNames.Length];
-        ObjectDic.Add(typeof(T), objects);
+        _objectDic.Add(typeof(T), objects);
 
         for (int i = 0; i < uiNames.Length; i++)
         {
@@ -43,7 +43,7 @@ public abstract class UI_Base : MonoBehaviour
     protected T Get<T>(int idx) where T : UnityEngine.Object
     {
         UnityEngine.Object[] objects;
-        if (ObjectDic.TryGetValue(typeof(T), out objects) == false)
+        if (_objectDic.TryGetValue(typeof(T), out objects) == false)
             return null;
 
         return objects[idx] as T;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerSample : MonoBehaviour
 {
 	private PlayerStat _stat;
 	
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 		    NavMeshAgent nma = gameObject.GetOrAddComponent<NavMeshAgent>();
 		    
 		    float moveDist = Mathf.Clamp(_stat.MoveSpeed * Time.deltaTime, 0, dir.magnitude);
-		    nma.Move(dir.normalized * moveDist);
+		    transform.position += dir.normalized * moveDist;
 			
 		    Debug.DrawRay(transform.position + Vector3.up * 0.5f, dir.normalized, Color.green);
 		    if (Physics.Raycast(transform.position, dir, 1.0f, LayerMask.GetMask("Block")))
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
 		    return;
 	    
 	    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-	    //Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.red, 1.0f);
+	    Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.red, 1.0f);
 
 	    RaycastHit hit;
 	    if (Physics.Raycast(ray, out hit, 100.0f, _layerMask))
