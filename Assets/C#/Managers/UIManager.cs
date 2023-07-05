@@ -43,7 +43,7 @@ public class UIManager
 
     /**
      * @param 이름이 name인 SceneUI 생성
-     * @return 생성한 sceneUI T컴포넌트로 리턴
+     * @return 생성한 sceneUI를 T컴포넌트로 리턴
      */
     public T ShowSceneUI<T>(string name = null) where T : UI_Scene
     {
@@ -61,7 +61,7 @@ public class UIManager
     
     /**
      * @param 이름이 name인 PopupUI 생성
-     * @return 생성한 PopupUI T컴포넌트로 리턴
+     * @return 생성한 PopupUI를 T컴포넌트로 리턴
      */
     public T ShowPopupUI<T>(string name = null) where T : UI_Popup
     {
@@ -77,16 +77,39 @@ public class UIManager
         return popupUI;
     }
 
-    public T MakeSubItem<T>(Transform parent = null, string name = null) where T : UI_Base
+    /**
+     * @param 이름이 name인 SubItemUI 생성
+     * @return 생성한 SubItemUI를 T컴포넌트로 리턴
+     */
+    public T MakeSubItemUI<T>(Transform parent = null, string name = null) where T : UI_Base
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
         GameObject go = GameManager.ResourceMng.Instantiate($"UI/SubItemUI/{name}");
-        
         if (parent != null)
             go.transform.SetParent(parent);
         
+        return go.GetOrAddComponent<T>();
+    }
+    
+    /**
+     * @param 이름이 name인 WorldSpaceUI 생성
+     * @return 생성한 sceneUI를 T컴포넌트로 리턴
+     */
+    public T MakeWorldSpaceUI<T>(Transform parent = null, string name = null) where T : UI_Base
+    {
+        if (string.IsNullOrEmpty(name))
+            name = typeof(T).Name;
+
+        GameObject go = GameManager.ResourceMng.Instantiate($"UI/WorldSpaceUI/{name}");
+        if (parent != null)
+            go.transform.SetParent(parent);
+
+        Canvas canvas = go.GetOrAddComponent<Canvas>();
+        canvas.renderMode = RenderMode.WorldSpace;
+        canvas.worldCamera = Camera.main;
+
         return go.GetOrAddComponent<T>();
     }
     

@@ -29,13 +29,15 @@ public class Define
         Click,
         Drag,
     }
-    
+
     public enum MouseEvent
     {
         Press,
+        PointerDown,
+        PointerUp,
         Click,
     }
-    
+
     public enum CameraMode
     {
         QuarterView,
