@@ -13,10 +13,10 @@ public class GameScene : BaseScene
         gameObject.GetOrAddComponent<CursorController>();
         
         // UIManager test
-        GameManager.UIMng.ShowSceneUI<UI_Inven>();
+        Managers.UIMng.ShowSceneUI<UI_Inven>();
 
         // DataManager test
-        Dictionary<int, Data.Stat> statDic = GameManager.DataMng.StatDic;
+        Dictionary<int, Data.Stat> statDic = Managers.DataMng.StatDic;
     }
     
     public override void Clear()

@@ -28,7 +28,7 @@ public class SoundManager
     }
 
     /**
-     * @param path위치의 음원 재생
+     * path 위치의 음원 재생
      */
     public void Play(string path, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
     {
@@ -37,8 +37,7 @@ public class SoundManager
     }
     
     /**
-     * @param audioClip 재생
-     * @param 재생 타입은 type, 재생 속도는 pitch로 설정
+     * 재생 타입은 type, 재생 속도는 pitch로 설정하여 audioClip 재생
      */
     public void Play(AudioClip audioClip, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
     {
@@ -64,7 +63,7 @@ public class SoundManager
     }
 
     /**
-     * @param path위치의 음원파일을 로드 후 리턴
+     * path 위치의 음원파일 로드 후 반환
      */
     private AudioClip GetOrAddAudioClip(string path, Define.Sound type = Define.Sound.Effect)
     {
@@ -75,13 +74,13 @@ public class SoundManager
 
         if (type == Define.Sound.Bgm)
         {
-            audioClip = GameManager.ResourceMng.Load<AudioClip>(path);
+            audioClip = Managers.ResourceMng.Load<AudioClip>(path);
         }
         else
         {
             if (_audioClipDic.TryGetValue(path, out audioClip) == false)
             {
-                audioClip = GameManager.ResourceMng.Load<AudioClip>(path);
+                audioClip = Managers.ResourceMng.Load<AudioClip>(path);
                 _audioClipDic.Add(path, audioClip);
             }
         }

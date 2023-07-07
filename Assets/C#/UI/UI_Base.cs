@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /*
- * @brief 모든 UI의 조상 클래스
+ * 모든 UI의 조상 클래스
  */
 public abstract class UI_Base : MonoBehaviour
 {
@@ -15,8 +15,13 @@ public abstract class UI_Base : MonoBehaviour
     
     public abstract void Init();
 
+    private void Start()
+    {
+        Init();
+    }
+
     /*
-     * @param T컴포넌트를 가지고 있는 모든 자식 GameObject를 검색해 _objectDic에 Add
+     * T컴포넌트를 가지고 있는 모든 자식 GameObject를 검색해 _objectDic에 Add
      */ 
     protected void Bind<T>(Type type) where T : UnityEngine.Object
     {
@@ -37,8 +42,7 @@ public abstract class UI_Base : MonoBehaviour
     }
 
     /*
-     * @param T컴포넌트를 가지고 있으며 파라미터로 넘긴 idx에 해당하는 GameObject 검색
-     * @return 검색한 GameObject를 T컴포넌트로 리턴
+     * T컴포넌트를 가지고 있으며 파라미터로 넘긴 idx에 해당하는 GameObject 검색 후 반환
      */
     protected T Get<T>(int idx) where T : UnityEngine.Object
     {
@@ -58,8 +62,7 @@ public abstract class UI_Base : MonoBehaviour
     protected Image GetImage(int idx) { return Get<Image>(idx); }
 
     /*
-     * @details 액션에 액션을 더하는 것도 가능
-     * @param go에 UI_EventHandler를 붙여 go가 이벤트 콜백을 받을 수 있도록 한다.
+     * go가 이벤트 콜백(입력)을 받아 이벤트 함수를 실행할 수 있게 만든다.
      */
     public static void BindEvent(GameObject go, Action<PointerEventData> action,
         Define.UIEvent type = Define.UIEvent.Click)

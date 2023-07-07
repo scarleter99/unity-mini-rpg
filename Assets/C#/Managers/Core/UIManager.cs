@@ -22,8 +22,8 @@ public class UIManager
     }
 
     /**
-     * @param sort가 true면, go의 Canvas 컴포넌트를 가져와 _order값을 1더해서 설정 (PopupUI)
-     * @param sort가 false면, go의 Canvas 컴포넌트를 가져와 _order값을 0으로 설정 (SceneUI)
+     * sort가 true면, go의 Canvas 컴포넌트를 가져와 _order값을 1더해서 설정 (PopupUI)
+     * sort가 false면, go의 Canvas 컴포넌트를 가져와 _order값을 0으로 설정 (SceneUI)
      */
     public void SetCanvas(GameObject go, bool sort = true)
     {
@@ -42,15 +42,14 @@ public class UIManager
     }
 
     /**
-     * @param 이름이 name인 SceneUI 생성
-     * @return 생성한 sceneUI를 T컴포넌트로 리턴
+     * 이름이 name인 SceneUI를 생성한 후 T컴포넌트로 반환
      */
     public T ShowSceneUI<T>(string name = null) where T : UI_Scene
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = GameManager.ResourceMng.Instantiate($"UI/SceneUI/{name}");
+        GameObject go = Managers.ResourceMng.Instantiate($"UI/SceneUI/{name}");
         T sceneUI = Util.GetOrAddComponent<T>(go);
         _sceneUI = sceneUI;
 
@@ -60,15 +59,14 @@ public class UIManager
     }
     
     /**
-     * @param 이름이 name인 PopupUI 생성
-     * @return 생성한 PopupUI를 T컴포넌트로 리턴
+     * 이름이 name인 PopupUI를 생성한 후 T컴포넌트로 반환
      */
     public T ShowPopupUI<T>(string name = null) where T : UI_Popup
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = GameManager.ResourceMng.Instantiate($"UI/PopupUI/{name}");
+        GameObject go = Managers.ResourceMng.Instantiate($"UI/PopupUI/{name}");
         T popupUI = Util.GetOrAddComponent<T>(go);
         _popupStack.Push(popupUI);
         
@@ -78,15 +76,14 @@ public class UIManager
     }
 
     /**
-     * @param 이름이 name인 SubItemUI 생성
-     * @return 생성한 SubItemUI를 T컴포넌트로 리턴
+     * 이름이 name인 SubItemUI를 생성한 후 T컴포넌트로 반환
      */
     public T MakeSubItemUI<T>(Transform parent = null, string name = null) where T : UI_Base
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = GameManager.ResourceMng.Instantiate($"UI/SubItemUI/{name}");
+        GameObject go = Managers.ResourceMng.Instantiate($"UI/SubItemUI/{name}");
         if (parent != null)
             go.transform.SetParent(parent);
         
@@ -94,15 +91,14 @@ public class UIManager
     }
     
     /**
-     * @param 이름이 name인 WorldSpaceUI 생성
-     * @return 생성한 sceneUI를 T컴포넌트로 리턴
+     * 이름이 name인 WorldSpaceUI를 생성한 후 T컴포넌트로 반환
      */
     public T MakeWorldSpaceUI<T>(Transform parent = null, string name = null) where T : UI_Base
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject go = GameManager.ResourceMng.Instantiate($"UI/WorldSpaceUI/{name}");
+        GameObject go = Managers.ResourceMng.Instantiate($"UI/WorldSpaceUI/{name}");
         if (parent != null)
             go.transform.SetParent(parent);
 
@@ -114,7 +110,7 @@ public class UIManager
     }
     
     /**
-     * @brief 가장 Order가 높은 PopupUI 제거
+     * 가장 Order가 높은 PopupUI 제거
      */
     public void ClosePopupUI()
     {
@@ -122,13 +118,13 @@ public class UIManager
             return;
 
         UI_Popup popupUI= _popupStack.Pop();
-        GameManager.ResourceMng.Destroy(popupUI.gameObject);
+        Managers.ResourceMng.Destroy(popupUI.gameObject);
         popupUI = null;
         _order--;
     }
     
     /**
-     * @param 가장 Order가 높은 PopupUI 확인 후 제거
+     * 가장 Order가 높은 PopupUI 확인 후 제거
      */
     public void ClosePopupUI(UI_Popup popup)
     {
@@ -145,7 +141,7 @@ public class UIManager
     }
     
     /**
-     * @brief 모든 PopupUI 제거
+     * 모든 PopupUI 제거
      */
     public void CloseAllPopupUI()
     {

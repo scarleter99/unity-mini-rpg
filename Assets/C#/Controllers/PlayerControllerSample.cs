@@ -22,8 +22,8 @@ public class PlayerControllerSample : MonoBehaviour
     {
 	    _stat = gameObject.GetComponent<PlayerStat>();
 	    
-	    GameManager.InputMng.MouseAction -= OnMouseClicked;
-	    GameManager.InputMng.MouseAction += OnMouseClicked;
+	    Managers.InputMng.MouseAction -= OnMouseClicked;
+	    Managers.InputMng.MouseAction += OnMouseClicked;
     }
 
     void Update()
@@ -110,6 +110,6 @@ public class PlayerControllerSample : MonoBehaviour
 	    }
 	    
 	    if (evt == Define.MouseEvent.Click)
-			GameManager.SoundMng.Play("UnityChan/univ0001");
+			Managers.SoundMng.Play("UnityChan/univ0001");
     }
 }

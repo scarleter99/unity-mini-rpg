@@ -5,9 +5,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-/*
- * @brief TEST CODE
- */
 public class UI_TestPopup : UI_Popup
 {
     enum Buttons
@@ -31,12 +28,7 @@ public class UI_TestPopup : UI_Popup
         ItemIcon
     }
 
-    private int mMoney = 0;
-    
-    private void Start()
-    {
-        Init();
-    }
+    private int _money = 0;
 
     public override void Init()
     {
@@ -53,8 +45,8 @@ public class UI_TestPopup : UI_Popup
     
     public void OnButtonClicked(PointerEventData data)
     {
-        mMoney++;
-        GetTextMeshProUGUI((int)Texts.MoneyText).text = $"Money: {mMoney}!";
+        _money++;
+        GetTextMeshProUGUI((int)Texts.MoneyText).text = $"Money: {_money}!";
     }
 
     public void OnDrag(PointerEventData data)

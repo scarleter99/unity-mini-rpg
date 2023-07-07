@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**
- * @brief 에셋 파일을 로드하는 Manager
- */
 public class ResourceManager
 {
     /**
-     * @param Resources폴더를 시작 위치로 path에 해당하는 에셋 파일 로드
-     * @return 로드한 파일을 T타입으로 리턴
+     * Resources폴더를 시작 위치로 path에 해당하는 에셋 파일을 로드하여 T 타입으로 반환
      */
     public T Load<T>(string path) where T : Object
     {
@@ -20,7 +16,7 @@ public class ResourceManager
             if (index >= 0)
                 name = name.Substring(index + 1);
 
-            GameObject go = GameManager.PoolMng.GetOriginal(name);
+            GameObject go = Managers.PoolMng.GetOriginal(name);
             if (go != null)
                 return go as T;
         }
@@ -29,9 +25,7 @@ public class ResourceManager
     }
     
     /**
-     * @param Prefabs폴더를 시작 위치로 path에 해당하는 GameObject 생성
-     * @param 부모 오브젝트를 parent 로 설정
-     * @return 생성된 GameObject 리턴
+     * Prefabs폴더를 시작 위치로 path에 해당하는 GameObject를 생성 후 부모 오브젝트를 parent 로 설정하여 반환
      */
     public GameObject Instantiate(string path, Transform parent = null)
     {
@@ -43,7 +37,7 @@ public class ResourceManager
         }
 
         if (original.GetComponent<PoolAble>() != null)
-            return GameManager.PoolMng.Pop(original, parent).gameObject;
+            return Managers.PoolMng.Pop(original, parent).gameObject;
 
         GameObject go = Object.Instantiate(original, parent);
         go.name = original.name;
@@ -52,7 +46,7 @@ public class ResourceManager
     }
     
     /**
-     * @param go 제거
+     * go가 poolAble일 경우 Pool에 Push한 후 제거 
      */
     public void Destroy(GameObject go)
     {
@@ -62,7 +56,7 @@ public class ResourceManager
         PoolAble poolAble = go.GetComponent<PoolAble>();
         if (poolAble != null)
         {
-            GameManager.PoolMng.Push(poolAble);
+            Managers.PoolMng.Push(poolAble);
             return;
         }
         
@@ -73,7 +67,7 @@ public class ResourceManager
 /* 사용예제
     void Start()
     {
-        GameObject mTemp = GameManager.Resource.Instantiate("Temp");
-        GameManager.Resource.Destroy(mTemp);
+        GameObject mTemp = Managers.Resource.Instantiate("Temp");
+        Managers.Resource.Destroy(mTemp);
     }
 */

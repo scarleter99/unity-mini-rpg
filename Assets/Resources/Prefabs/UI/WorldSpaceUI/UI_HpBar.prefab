@@ -178,7 +178,7 @@ RectTransform:
   m_GameObject: {fileID: 5403674188415709118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8310853306081566312}
@@ -255,7 +255,6 @@ GameObject:
   - component: {fileID: 2824047883710392412}
   - component: {fileID: 7550464102144532191}
   - component: {fileID: 5663356625250358854}
-  - component: {fileID: 5761544127991705919}
   m_Layer: 5
   m_Name: UI_HpBar
   m_TagString: Untagged
@@ -272,7 +271,7 @@ RectTransform:
   m_GameObject: {fileID: 5766619709377003300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4299449323478624245}
@@ -329,7 +328,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5663356625250358854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,18 +346,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5761544127991705919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5766619709377003300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8f8f0aea5e3314fa93fe7ded4e6ea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6970751758768020065
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /**
- * @brief 모든 Scene의 조상 클래스
+ * 모든 Scene의 조상 클래스
  */
 public abstract class BaseScene : MonoBehaviour
 { 
@@ -19,7 +19,7 @@ public abstract class BaseScene : MonoBehaviour
     {
         Object obj = GameObject.FindObjectOfType(typeof(EventSystem));
         if (obj == null)
-            GameManager.ResourceMng.Instantiate("UI/EventSystem").name = "@EventSystem";
+            Managers.ResourceMng.Instantiate("UI/EventSystem").name = "@EventSystem";
     }
     
     public abstract void Clear();

@@ -8,11 +8,7 @@ public class UI_Inven : UI_Scene
     {
         GridPanel
     }
-    private void Start()
-    {
-        Init();
-    }
-    
+
     public override void Init()
     {
         base.Init();
@@ -21,12 +17,12 @@ public class UI_Inven : UI_Scene
 
         GameObject gridPanel = GetGameObject((int)GameObjects.GridPanel);
         foreach (Transform child in gridPanel.transform)
-            GameManager.ResourceMng.Destroy(child.gameObject);
+            Managers.ResourceMng.Destroy(child.gameObject);
 
         // todo TestCode
         for (int i = 0; i < 8; i++)
         {
-            GameObject go = GameManager.UIMng.MakeSubItemUI<UI_Inven_Item>(gridPanel.transform).gameObject;
+            GameObject go = Managers.UIMng.MakeSubItemUI<UI_Inven_Item>(gridPanel.transform).gameObject;
             UI_Inven_Item invenItem = go.GetOrAddComponent<UI_Inven_Item>();
             invenItem.SetInfo($"Item{i}");
         }

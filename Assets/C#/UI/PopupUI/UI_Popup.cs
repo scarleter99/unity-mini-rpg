@@ -6,14 +6,14 @@ public class UI_Popup : UI_Base
 {
     public override void Init()
     {
-        GameManager.UIMng.SetCanvas(gameObject, true);
+        Managers.UIMng.SetCanvas(gameObject, true);
     }
 
     /**
-     * @brief Popup 닫기
+     * Popup 닫기
      */
     public virtual void ClosePopupUI()
     {
-        GameManager.UIMng.ClosePopupUI(this);
+        Managers.UIMng.ClosePopupUI(this);
     }
 }

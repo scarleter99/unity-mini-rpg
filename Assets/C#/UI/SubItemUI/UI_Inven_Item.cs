@@ -15,11 +15,6 @@ public class UI_Inven_Item : UI_Base
     }
 
     private string _itemName;
-    
-    private void Start()
-    {
-        Init();
-    }
 
     public override void Init()
     {

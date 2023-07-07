@@ -13,8 +13,7 @@ public class InputManager
     private float _pressedTime = 0;
 
     /**
-     * @brief 입력이 없다면 바로 리턴, 입력이 있다면 KeyAction/MouseAction을 Invoke
-     * @details 매 프레임마다 실행
+     * 입력이 없다면 바로 리턴, 입력이 있다면 KeyAction/MouseAction을 Invoke
      */
     public void OnUpdate()
     {
@@ -63,7 +62,7 @@ public class InputManager
 /* 사용예제
     void Start()
     {
-        GameManager.InputMng.KeyAction += OnKeyboard;
+        Managers.InputMng.KeyAction += OnKeyboard;
     }
 
     void OnKeyboard()

@@ -17,12 +17,11 @@ public class DataManager
     }
 
     /**
-     * @param path 위치의 Json 파일을 TextAsset 타입으로 로드
-     * @return 로드한 데이터를 Data 타입의 객체로 리턴
+     * path 위치의 Json 파일을 TextAsset 타입으로 로드
      */
     Data LoadJson<Data, Key, Value>(string path) where Data : IData<Key, Value>
     {
-        TextAsset textAsset = GameManager.ResourceMng.Load<TextAsset>($"Datas/{path}");
+        TextAsset textAsset = Managers.ResourceMng.Load<TextAsset>($"Datas/{path}");
         
         return JsonUtility.FromJson<Data>(textAsset.text);
     }

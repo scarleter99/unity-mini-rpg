@@ -8,7 +8,7 @@ public class SceneManagerEx
     public BaseScene CurrentScene => GameObject.FindObjectOfType<BaseScene>();
 
     /**
-     * @param type Scene 이름 리턴
+     * type의 이름을 string으로 반환
      */
     private string GetSceneName(Define.Scene type)
     {
@@ -16,11 +16,11 @@ public class SceneManagerEx
     }
 
     /**
-     * @param type Scene 로드
+     * type에 해당하는 Scene을 로드
      */
     public void LoadScene(Define.Scene type)
     {
-        GameManager.Clear();
+        Managers.Clear();
         
         SceneManager.LoadScene(GetSceneName(type));
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /*
- * @brief UI가 입력(클릭, 드래그)을 받을 수 있게 해주는 Class
+ * UI가 입력(클릭, 드래그)을 받을 수 있게 해주는 Class
  */
 public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IDragHandler
 {
@@ -13,7 +13,7 @@ public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IDragHandler
     public Action<PointerEventData> OnDragHandler = null;
 
     /*
-     * @brief OnClickHandler에 등록된 함수 모두 실행
+     * OnClickHandler에 등록된 함수 모두 실행
      */
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -22,7 +22,7 @@ public class UI_EventHandler : MonoBehaviour, IPointerClickHandler, IDragHandler
     }
 
     /*
-     * @brief OnDragHandler에 등록된 함수 모두 실행
+     * OnDragHandler에 등록된 함수 모두 실행
      */
     public void OnDrag(PointerEventData eventData)
     {

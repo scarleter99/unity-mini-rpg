@@ -1,8 +1,22 @@
 ﻿/**
- * @brief enum 정의
+ * enum 정의
  */
 public class Define
 {
+    public enum WorldObject
+    {
+        Unkown,
+        Player,
+        Monster,
+    }
+    
+    public enum State
+    {
+        Die,
+        Idle,
+        Moving,
+        Skill
+    }
     public enum Layer
     {
         Ground = 6,

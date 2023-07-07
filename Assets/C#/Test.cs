@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * @brief TEST CODE
+ * TEST CODE
  */
 public class Test : MonoBehaviour
 {
@@ -24,16 +24,16 @@ public class Test : MonoBehaviour
     {
         List<GameObject> go = new List<GameObject>();
         for (int i = 0; i < 4; i++)
-            go.Add(GameManager.ResourceMng.Instantiate("Cube"));
+            go.Add(Managers.ResourceMng.Instantiate("Cube"));
     }
 
     public void TestPopupUI()
     {
-        GameManager.UIMng.ShowPopupUI<UI_TestPopup>();
+        Managers.UIMng.ShowPopupUI<UI_TestPopup>();
     }
 
     public void TestSceneUI()
     {
-        GameManager.UIMng.ShowSceneUI<UI_Inven>();
+        Managers.UIMng.ShowSceneUI<UI_Inven>();
     }
 }

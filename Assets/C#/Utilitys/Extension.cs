@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /*
- * @brief 확장 메소드를 지원하는 Class
+ * 확장 메소드를 지원하는 Class
  */
 public static class Extension
 {

@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * @brief 전역으로 게임 전체와 다른 Manager를 관리하는 Manager
- * @details Singleton 패턴 적용
+ * 전역으로 게임 전체와 다른 Manager를 관리하는 Manager
  */
-public class GameManager : MonoBehaviour
+public class Managers : MonoBehaviour
 {
-    private static GameManager s_instance;
-    public static GameManager Instance { get { Init(); return s_instance; } }
+    private static Managers s_instance;
+    public static Managers Instance { get { Init(); return s_instance; } }
 
+#region Contents
+    private GameManager _gamMng = new GameManager();
+    
+    public static GameManager GameMng => Instance._gamMng;
+#endregion
+    
+
+#region Core
     private DataManager _dataMng = new DataManager();
     private InputManager _inputMng = new InputManager();
     private PoolManager _poolMng = new PoolManager();
@@ -18,7 +25,7 @@ public class GameManager : MonoBehaviour
     private SceneManagerEx _sceneMng = new SceneManagerEx();
     private SoundManager _soundMng = new SoundManager();
     private UIManager _uiMng = new UIManager();
-
+    
     public static DataManager DataMng => Instance._dataMng;
     public static InputManager InputMng => Instance._inputMng;
     public static PoolManager PoolMng => Instance._poolMng;
@@ -26,7 +33,7 @@ public class GameManager : MonoBehaviour
     public static SceneManagerEx SceneMng => Instance._sceneMng;
     public static SoundManager SoundMng => Instance._soundMng;
     public static UIManager UIMng => Instance._uiMng;
-
+#endregion
 
     private void Start()
     {
@@ -42,15 +49,15 @@ public class GameManager : MonoBehaviour
     {
         if (s_instance == null)
         {
-            GameObject go = GameObject.Find("@GameManager");
+            GameObject go = GameObject.Find("@Managers");
             if (go == null)
             {
-                go = new GameObject { name = "@GameManager" };
-                go.AddComponent<GameManager>();
+                go = new GameObject { name = "@Managers" };
+                go.AddComponent<Managers>();
             }
             
             DontDestroyOnLoad(go);
-            s_instance = go.GetComponent<GameManager>();
+            s_instance = go.GetComponent<Managers>();
 
             s_instance._dataMng.Init();
             s_instance._soundMng.Init();

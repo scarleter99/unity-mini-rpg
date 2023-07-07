@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * @brief Pool 객체들을 관리하는 Manager
- * @details ResourceManager를 보조
+ * ResourceManger를 보조하여 Pool 객체들을 관리하는 Manager
  */
 public class PoolManager
 {
@@ -21,7 +20,7 @@ public class PoolManager
     }
     
     /**
-     * @param original의 Pool을 count만큼 생성
+     * original의 Pool을 count만큼 생성
      */
     public void CreatePool(GameObject original, int count = 5)
     {
@@ -33,7 +32,7 @@ public class PoolManager
     }
     
     /**
-     * @param 다 사용한 poolable오브젝트를 Pool에 다시 넣어 대기 상태로 전환
+     * 다 사용한 poolable오브젝트를 Pool에 다시 넣어 대기 상태로 전환
      */
     public void Push(PoolAble poolAble)
     {
@@ -48,8 +47,7 @@ public class PoolManager
     }
     
     /**
-     * @param original의 이름에 해당하는 Pool을 Pop한 후 parent를 부모 오브젝트로 설정
-     * @return Pool로부터 사용할 Poolable 리턴
+     * original의 이름에 해당하는 Pool을 parent를 부모 오브젝트로 설정한 후 Pop
      */
     public PoolAble Pop(GameObject original, Transform parent = null)
     {
@@ -60,8 +58,7 @@ public class PoolManager
     }
     
     /**
-     * @param name에 해당하는 원본 GameObject에 접근
-     * @return 원본 GameObject를 리턴
+     * name에 해당하는 원본 GameObject를 반환
      */
     public GameObject GetOriginal(string name)
     {

@@ -12,14 +12,14 @@ public class TitleScene : BaseScene
 
         SceneType = Define.Scene.TitleScene;
 
-        GameManager.InputMng.KeyAction += OnKeyboard;
+        Managers.InputMng.KeyAction += OnKeyboard;
     }
     
     void OnKeyboard()
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            GameManager.SceneMng.LoadScene(Define.Scene.GameScene);
+            Managers.SceneMng.LoadScene(Define.Scene.GameScene);
         }
     }
 
