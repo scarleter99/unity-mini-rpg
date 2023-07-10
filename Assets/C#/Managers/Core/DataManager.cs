@@ -9,11 +9,11 @@ public interface IData<Key, Value>
 
 public class DataManager
 {
-    public Dictionary<int, Data.Stat> StatDic { get; private set; }
+    public Dictionary<int, Data.Stat> StatDict { get; private set; }
 
     public void Init()
     {
-        StatDic = LoadJson<Data.StatData, int, Data.Stat>("StatData").MakeDict();
+        StatDict = LoadJson<Data.StatData, int, Data.Stat>("StatData").MakeDict();
     }
 
     /**

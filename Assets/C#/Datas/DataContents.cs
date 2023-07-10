@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Data
 {
@@ -9,9 +10,10 @@ namespace Data
     [Serializable]
     public class Stat
     {
-        public int id;
-        public int hp;
-        public int damage;
+        public int level;
+        public int maxHp;
+        public int attack;
+        public int totalExp;
     }
     
     [Serializable]
@@ -26,7 +28,7 @@ namespace Data
         {
             Dictionary<int, Stat> dic = new Dictionary<int, Stat>();
             foreach (Stat stat in stats)
-                dic.Add(stat.id, stat);
+                dic.Add(stat.level, stat);
             
             return dic;
         }

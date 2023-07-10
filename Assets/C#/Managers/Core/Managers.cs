@@ -15,7 +15,6 @@ public class Managers : MonoBehaviour
     
     public static GameManager GameMng => Instance._gamMng;
 #endregion
-    
 
 #region Core
     private DataManager _dataMng = new DataManager();

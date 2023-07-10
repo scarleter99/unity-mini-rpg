@@ -24,7 +24,7 @@ public class MonsterController : BaseController
 
     protected override void UpdateIdle()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = Managers.GameMng.Player;
         if (player == null)
             return;
 
@@ -63,7 +63,8 @@ public class MonsterController : BaseController
             nma.SetDestination(_destPos);
             nma.speed = _stat.MoveSpeed;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 
+                20 * Time.deltaTime);
         }
     }
     
@@ -72,7 +73,8 @@ public class MonsterController : BaseController
         if (_lockTarget != null)
         {
             Vector3 dir = _lockTarget.transform.position - transform.position;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 
+                20 * Time.deltaTime);
         }
     }
 
@@ -81,7 +83,7 @@ public class MonsterController : BaseController
         if (_lockTarget != null)
         {
             Stat targetStat = _lockTarget.GetComponent<Stat>();
-            targetStat.Hp -= Mathf.Max(0, _stat.Attack - targetStat.Defense);
+            targetStat.OnAttacked(_stat);
 
             if (targetStat.Hp > 0)
             {

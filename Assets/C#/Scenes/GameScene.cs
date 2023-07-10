@@ -10,13 +10,20 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.GameScene;
 
+        // DataManager test
+        Dictionary<int, Data.Stat> statDic = Managers.DataMng.StatDict;
+        
         gameObject.GetOrAddComponent<CursorController>();
         
         // UIManager test
-        Managers.UIMng.ShowSceneUI<UI_Inven>();
+        //Managers.UIMng.ShowSceneUI<UI_Inven>();
 
-        // DataManager test
-        Dictionary<int, Data.Stat> statDic = Managers.DataMng.StatDic;
+        GameObject player = Managers.GameMng.Spawn(Define.WorldObject.Player, "UnityChan");
+        Camera.main.gameObject.GetOrAddComponent<CameraController>().SetPlayer(player);
+
+        GameObject go = new GameObject { name = "SpawningPool" };
+        SpawningPool pool = go.GetOrAddComponent<SpawningPool>();
+        pool.SetKeepMonsterCount(5);
     }
     
     public override void Clear()

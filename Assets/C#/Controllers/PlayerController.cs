@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlayerController : BaseController
 {
@@ -48,25 +47,28 @@ public class PlayerController : BaseController
 	    }
 
 	    Vector3 dir = _destPos - transform.position;
+	    dir.y = 0;
 	    if (dir.magnitude < 0.1f)
 	    {
 		    State = Define.State.Idle;
 	    }
 	    else
 	    {
-		    // NavMeshAgent nma = gameObject.GetOrAddComponent<NavMeshAgent>();
-		    // nma.Move(dir.normalized * moveDist);
 		    Debug.DrawRay(transform.position + Vector3.up * 0.5f, dir.normalized, Color.green);
-		    if (Physics.Raycast(transform.position, dir, 1.0f, LayerMask.GetMask("Block")))
+		    if (Physics.Raycast(transform.position, dir, 1.0f, 
+			        1 << (int)Define.Layer.Block))
 		    {
 			    if(Input.GetMouseButton(0) == false)
 				    State = Define.State.Idle;
 			    return;
 		    }
 		    
+		    // NavMeshAgent nma = gameObject.GetOrAddComponent<NavMeshAgent>();
+		    // nma.Move(dir.normalized * moveDist);
 		    float moveDist = Mathf.Clamp(_stat.MoveSpeed * Time.deltaTime, 0, dir.magnitude);
 		    transform.position += dir.normalized * moveDist;
-		    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
+		    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 
+			    20 * Time.deltaTime);
 	    }
     }
 
@@ -75,7 +77,8 @@ public class PlayerController : BaseController
 	    if (_lockTarget != null)
 	    {
 		    Vector3 dir = _lockTarget.transform.position - transform.position;
-		    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
+		    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 
+			    20 * Time.deltaTime);
 	    }
     }
 
@@ -138,7 +141,7 @@ public class PlayerController : BaseController
 	    if (_lockTarget != null)
 	    {
 		    Stat targetStat = _lockTarget.GetComponent<Stat>();
-		    targetStat.Hp -= Mathf.Max(0, _stat.Attack - targetStat.Defense);
+		    targetStat.OnAttacked(_stat);
 	    }
 	    
 	    if (_stopSkill)
