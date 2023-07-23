@@ -36,7 +36,7 @@ public class GameManager
     {
         BaseController bc = go.GetComponent<BaseController>();
         if (bc == null)
-            return Define.WorldObject.Unkown;
+            return Define.WorldObject.Unknown;
         
         return bc.WorldObjectType;
     }

@@ -5,7 +5,7 @@ public class Define
 {
     public enum WorldObject
     {
-        Unkown,
+        Unknown,
         Player,
         Monster,
     }
