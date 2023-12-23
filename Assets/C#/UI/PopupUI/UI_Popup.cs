@@ -9,9 +9,7 @@ public class UI_Popup : UI_Base
         Managers.UIMng.SetCanvas(gameObject, true);
     }
 
-    /**
-     * Popup 닫기
-     */
+    // Popup 닫기
     public virtual void ClosePopupUI()
     {
         Managers.UIMng.ClosePopupUI(this);

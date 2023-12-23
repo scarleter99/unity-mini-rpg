@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * TEST CODE
- */
+// TEST CODE
 public class Test : MonoBehaviour
 {
     private void Start()

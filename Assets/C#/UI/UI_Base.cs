@@ -6,9 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-/*
- * 모든 UI의 조상 클래스
- */
+// 모든 UI의 조상 클래스
 public abstract class UI_Base : MonoBehaviour
 {
     protected Dictionary<Type, UnityEngine.Object[]> _objectDic = new Dictionary<Type, UnityEngine.Object[]>();
@@ -20,9 +18,7 @@ public abstract class UI_Base : MonoBehaviour
         Init();
     }
 
-    /*
-     * T컴포넌트를 가지고 있는 모든 자식 GameObject를 검색해 _objectDic에 Add
-     */ 
+    // T컴포넌트를 가지고 있는 모든 자식 GameObject를 검색해 _objectDic에 Add
     protected void Bind<T>(Type type) where T : UnityEngine.Object
     {
         string[] uiNames = Enum.GetNames(type);
@@ -41,9 +37,7 @@ public abstract class UI_Base : MonoBehaviour
         }
     }
 
-    /*
-     * T컴포넌트를 가지고 있으며 파라미터로 넘긴 idx에 해당하는 GameObject 검색 후 반환
-     */
+    // T컴포넌트를 가지고 있으며 파라미터로 넘긴 idx에 해당하는 GameObject 검색 후 반환
     protected T Get<T>(int idx) where T : UnityEngine.Object
     {
         UnityEngine.Object[] objects;
@@ -61,9 +55,7 @@ public abstract class UI_Base : MonoBehaviour
 
     protected Image GetImage(int idx) { return Get<Image>(idx); }
 
-    /*
-     * go가 이벤트 콜백(입력)을 받아 이벤트 함수를 실행할 수 있게 만든다.
-     */
+    // go가 이벤트 콜백(입력)을 받아 이벤트 함수를 실행할 수 있게 만든다.
     public static void BindEvent(GameObject go, Action<PointerEventData> action,
         Define.UIEvent type = Define.UIEvent.Click)
     {

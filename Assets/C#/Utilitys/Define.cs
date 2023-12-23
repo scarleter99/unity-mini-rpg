@@ -1,7 +1,4 @@
-﻿/**
- * enum 정의
- */
-public class Define
+﻿public class Define
 {
     public enum WorldObject
     {

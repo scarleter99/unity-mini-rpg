@@ -19,7 +19,7 @@ public class UI_Inven : UI_Scene
         foreach (Transform child in gridPanel.transform)
             Managers.ResourceMng.Destroy(child.gameObject);
 
-        // todo TestCode
+        // TODO TestCode
         for (int i = 0; i < 8; i++)
         {
             GameObject go = Managers.UIMng.MakeSubItemUI<UI_Inven_Item>(gridPanel.transform).gameObject;

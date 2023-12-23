@@ -27,18 +27,14 @@ public class SoundManager
         }
     }
 
-    /**
-     * path 위치의 음원 재생
-     */
+    // path 위치의 음원 재생
     public void Play(string path, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
     {
         AudioClip audioClip = GetOrAddAudioClip(path, type);
         Play(audioClip, type, pitch);
     }
-    
-    /**
-     * 재생 타입은 type, 재생 속도는 pitch로 설정하여 audioClip 재생
-     */
+
+    // 재생 타입은 type, 재생 속도는 pitch로 설정하여 audioClip 재생
     public void Play(AudioClip audioClip, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
     {
         if (audioClip == null)
@@ -62,9 +58,7 @@ public class SoundManager
         }
     }
 
-    /**
-     * path 위치의 음원파일 로드 후 반환
-     */
+    // path 위치의 음원파일 로드 후 반환
     private AudioClip GetOrAddAudioClip(string path, Define.Sound type = Define.Sound.Effect)
     {
         if (path.Contains("Sounds/") == false)

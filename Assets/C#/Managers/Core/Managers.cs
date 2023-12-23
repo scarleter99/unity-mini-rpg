@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**
- * 전역으로 게임 전체와 다른 Manager를 관리하는 Manager
- */
 public class Managers : MonoBehaviour
 {
     private static Managers s_instance;
     public static Managers Instance { get { Init(); return s_instance; } }
 
 #region Contents
-    private GameManager _gamMng = new GameManager();
+    private GameManager _gameMng = new GameManager();
     
-    public static GameManager GameMng => Instance._gamMng;
+    public static GameManager GameMng => Instance._gameMng;
 #endregion
 
 #region Core

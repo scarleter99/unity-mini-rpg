@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// 게임 내 모든 입력 처리
 public class InputManager
 {
     public Action KeyAction = null;
@@ -12,9 +13,7 @@ public class InputManager
     private bool _pressed = false;
     private float _pressedTime = 0;
 
-    /**
-     * 입력이 없다면 바로 리턴, 입력이 있다면 KeyAction/MouseAction을 Invoke
-     */
+    // 입력이 없다면 바로 리턴, 입력이 있다면 KeyAction/MouseAction을 Invoke
     public void OnUpdate()
     {
         if (EventSystem.current.IsPointerOverGameObject())

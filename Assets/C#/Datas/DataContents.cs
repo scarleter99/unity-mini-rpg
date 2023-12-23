@@ -21,9 +21,7 @@ namespace Data
     {
         public List<Stat> stats = new List<Stat>();
         
-        /**
-         * List형태의 Data를 Dictionary형태로 변환 후 반환
-         */
+        // List형태의 Data를 Dictionary형태로 변환 후 반환
         public Dictionary<int, Stat> MakeDict()
         {
             Dictionary<int, Stat> dic = new Dictionary<int, Stat>();

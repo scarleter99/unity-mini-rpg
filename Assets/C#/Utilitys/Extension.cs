@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-/*
- * 확장 메소드를 지원하는 Class
- */
+// 확장 메소드를 지원하는 Class
 public static class Extension
 {
     public static T GetOrAddComponent<T>(this GameObject go) where T : UnityEngine.Component

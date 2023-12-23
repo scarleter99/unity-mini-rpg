@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * 추가기능 메소드를 지원하는 클래스
- */
+// 추가기능 메소드를 지원하는 클래스
 public class Util : MonoBehaviour
 {
-    /**
-     * go에 T컴포넌트가 있다면 가져오고, 없다면 생성하여 반환
-     */
+    // go에 T컴포넌트가 있다면 가져오고, 없다면 생성하여 반환
     public static T GetOrAddComponent<T>(GameObject go) where T : UnityEngine.Component
     {
         T component = go.GetComponent<T>();
@@ -19,10 +15,8 @@ public class Util : MonoBehaviour
         return component;
     }
 
-    /**
-     * go의 모든 자식들 중 T컴포넌트를 가지며, name과 이름이 일치하는 GameObject 검색하여 반환
-     * recursive가 true라면 바로 밑 자식 뿐 모든 자손들에서 검색, false라면 자식만 검색
-     */
+    // go의 모든 자식들 중 T컴포넌트를 가지며, name과 이름이 일치하는 GameObject 검색하여 반환
+    // recursive가 true라면 바로 밑 자식 뿐 모든 자손들에서 검색, false라면 자식만 검색
     public static T FindChild<T>(GameObject go, string name = null, bool recursive = false) where T : UnityEngine.Object
     {
         if (go == null)
@@ -53,9 +47,7 @@ public class Util : MonoBehaviour
         return null;
     }
 
-    /**
-     * FindChild<Transform>에 파라미터를 그대로 넣어서 실행하여 gameObject 검색 후 반환
-     */
+    // FindChild<Transform>로 실행하여 gameObject 검색 후 반환
     public static GameObject FindChild(GameObject go, string name = null, bool recursive = false)
     {
         Transform transform = FindChild<Transform>(go, name, recursive);
