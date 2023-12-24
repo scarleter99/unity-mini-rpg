@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
-public class PlayerController : BaseController
+public class TestPlayerController : BaseController
 {
 	private int _layerMask = (1 << (int)Define.Layer.Ground) | (1 << (int)Define.Layer.Monster);
 	
@@ -19,8 +19,8 @@ public class PlayerController : BaseController
 	    Managers.InputMng.MouseAction -= OnMouseEvent;
 	    Managers.InputMng.MouseAction += OnMouseEvent;
 	    
-	    if (gameObject.GetComponentInChildren<UI_HpBar>() == null) 
-			Managers.UIMng.MakeWorldSpaceUI<UI_HpBar>(transform);
+	    if (gameObject.GetComponentInChildren<UI_TestHpBar>() == null) 
+			Managers.UIMng.MakeWorldSpaceUI<UI_TestHpBar>(transform);
     }
 	
 	protected override void UpdateDie()

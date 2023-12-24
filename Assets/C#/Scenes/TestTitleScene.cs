@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleScene : BaseScene
+public class TestTitleScene : BaseScene
 {
     protected override void Init()
     {
         base.Init();
 
-        SceneType = Define.Scene.TitleScene;
+        SceneType = Define.Scene.TestTitleScene;
 
         Managers.InputMng.KeyAction += OnKeyboard;
+
+        // UIManager test
+        Managers.UIMng.ShowSceneUI<UI_TestInven>();
     }
-    
+
     void OnKeyboard()
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            Managers.SceneMng.LoadScene(Define.Scene.GameScene);
+            Managers.SceneMng.LoadScene(Define.Scene.TestGameScene);
         }
     }
 

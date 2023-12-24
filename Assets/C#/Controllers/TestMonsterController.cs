@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MonsterController : BaseController
+public class TestMonsterController : BaseController
 {
     private Stat _stat;
 
@@ -18,8 +18,8 @@ public class MonsterController : BaseController
         WorldObjectType = Define.WorldObject.Monster;
         _stat = gameObject.GetComponent<Stat>();
         
-        if (gameObject.GetComponentInChildren<UI_HpBar>() == null) 
-            Managers.UIMng.MakeWorldSpaceUI<UI_HpBar>(transform);
+        if (gameObject.GetComponentInChildren<UI_TestHpBar>() == null) 
+            Managers.UIMng.MakeWorldSpaceUI<UI_TestHpBar>(transform);
     }
 
     protected override void UpdateIdle()

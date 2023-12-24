@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Inven : UI_Scene
+public class UI_TestInven : UI_Scene
 {
     enum GameObjects
     {
@@ -19,11 +19,10 @@ public class UI_Inven : UI_Scene
         foreach (Transform child in gridPanel.transform)
             Managers.ResourceMng.Destroy(child.gameObject);
 
-        // TODO TestCode
         for (int i = 0; i < 8; i++)
         {
-            GameObject go = Managers.UIMng.MakeSubItemUI<UI_Inven_Item>(gridPanel.transform).gameObject;
-            UI_Inven_Item invenItem = go.GetOrAddComponent<UI_Inven_Item>();
+            GameObject go = Managers.UIMng.MakeSubItemUI<UI_TestInven_TestItem>(gridPanel.transform).gameObject;
+            UI_TestInven_TestItem invenItem = go.GetOrAddComponent<UI_TestInven_TestItem>();
             invenItem.SetInfo($"Item{i}");
         }
     }

@@ -32,6 +32,6 @@ public class Test : MonoBehaviour
 
     public void TestSceneUI()
     {
-        Managers.UIMng.ShowSceneUI<UI_Inven>();
+        Managers.UIMng.ShowSceneUI<UI_TestInven>();
     }
 }

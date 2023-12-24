@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_HpBar : UI_Base
+public class UI_TestHpBar : UI_Base
 {
     enum GameObjects
     {

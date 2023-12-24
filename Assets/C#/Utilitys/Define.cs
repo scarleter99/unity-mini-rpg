@@ -24,8 +24,8 @@
     public enum Scene
     {
         UnknownScene,
-        TitleScene,
-        GameScene,
+        TestTitleScene,
+        TestGameScene,
     }
     
     public enum Sound

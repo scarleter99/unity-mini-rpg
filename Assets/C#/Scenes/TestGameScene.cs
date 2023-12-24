@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameScene : BaseScene
+public class TestGameScene : BaseScene
 {
     protected override void Init()
     {
         base.Init();
 
-        SceneType = Define.Scene.GameScene;
+        SceneType = Define.Scene.TestGameScene;
 
         // DataManager test
         Dictionary<int, Data.Stat> statDic = Managers.DataMng.StatDict;
         
         gameObject.GetOrAddComponent<CursorController>();
         
-        // UIManager test
-        //Managers.UIMng.ShowSceneUI<UI_Inven>();
-
         GameObject player = Managers.GameMng.Spawn(Define.WorldObject.Player, "UnityChan");
         Camera.main.gameObject.GetOrAddComponent<CameraController>().SetPlayer(player);
 

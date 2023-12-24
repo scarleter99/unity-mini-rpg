@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Unity.UI;
 
-public class UI_Inven_Item : UI_Base
+public class UI_TestInven_TestItem : UI_Base
 {
     // 종류가 적을땐 GameObjects로 통일
     enum GameObjects
